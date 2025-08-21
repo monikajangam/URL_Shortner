@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener - Make Your Links Shorter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-link"></i>
+                <h1>URL Shortener</h1>
+            </div>
+            <p class="tagline">Shorten your links, share them anywhere</p>
+        </header>
+
+        <!-- Main Form -->
+        <main class="main-content">
+            <div class="shortener-card">
+                <h2>Shorten Your URL</h2>
+                <form id="shortenForm" class="shorten-form">
+                    <div class="input-group">
+                        <input 
+                            type="url" 
+                            id="originalUrl" 
+                            placeholder="Paste your long URL here..."
+                            required
+                        >
+                        <button type="submit" id="shortenBtn">
+                            <i class="fas fa-cut"></i>
+                            Shorten
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Loading State -->
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Shortening your URL...</p>
+                </div>
+
+                <!-- Result -->
+                <div id="result" class="result hidden">
+                    <h3>Your shortened URL:</h3>
+                    <div class="result-card">
+                        <div class="url-display">
+                            <input type="text" id="shortUrl" readonly>
+                            <button id="copyBtn" class="copy-btn">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                        </div>
+                        <div class="url-info">
+                            <p><strong>Original URL:</strong> <span id="originalUrlDisplay"></span></p>
+                            <p><strong>Clicks:</strong> <span id="clickCount">0</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error -->
+                <div id="error" class="error hidden">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Lightning Fast</h3>
+                    <p>Get your shortened URL instantly</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Track Clicks</h3>
+                    <p>Monitor how many times your link is clicked</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure</h3>
+                    <p>Your URLs are safe and secure</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Recent URLs -->
+        <section class="recent-urls hidden" id="recentUrls">
+            <h2>Recent URLs</h2>
+            <div id="urlsList" class="urls-list">
+                <!-- URLs will be populated here -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 URL Shortener. Built with ❤️ using Node.js & Express</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
