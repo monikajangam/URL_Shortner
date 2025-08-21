@@ -2,7 +2,7 @@
 
 A beginner-friendly URL shortener similar to Bitly, built with Node.js, Express.js, and an in-memory hashmap for storage.
 
-## 🚀 Features
+## Features
 
 - **URL Shortening**: Convert long URLs into short, shareable links
 - **Click Tracking**: Monitor how many times your links are clicked
@@ -13,7 +13,7 @@ A beginner-friendly URL shortener similar to Bitly, built with Node.js, Express.
 - **Mobile Responsive**: Works perfectly on all devices
 - **No Database Required**: Uses in-memory storage for simplicity
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: Node.js, Express.js
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
@@ -21,31 +21,6 @@ A beginner-friendly URL shortener similar to Bitly, built with Node.js, Express.
 - **Styling**: Custom CSS with modern design
 - **Icons**: Font Awesome
 - **Fonts**: Inter (Google Fonts)
-
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd url-shortener
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the server**
-   ```bash
-   # For development (with auto-reload)
-   npm run dev
-   
-   # For production
-   npm start
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:3000`
 
 ## 🎯 Usage
 
@@ -63,21 +38,7 @@ A beginner-friendly URL shortener similar to Bitly, built with Node.js, Express.
 - `GET /api/stats/:shortUrl` - Get URL statistics
 - `GET /api/urls` - Get all URLs
 - `GET /api/health` - Health check
-
-### Example API Usage
-
-```bash
-# Shorten a URL
-curl -X POST http://localhost:3000/api/shorten \
-  -H "Content-Type: application/json" \
-  -d '{"originalUrl": "https://www.google.com"}'
-
-# Get URL statistics
-curl http://localhost:3000/api/stats/abc123
-
-# Get all URLs
-curl http://localhost:3000/api/urls
-```
+- 
 
 ## 🏗️ Project Structure
 
@@ -110,7 +71,7 @@ url-shortener/
 4. **Copy Functionality**: One-click URL copying with feedback
 5. **Recent URLs**: Displays recently shortened URLs
 
-## 🎨 Features in Detail
+##  Features in Detail
 
 ### URL Shortening
 - Generates unique 6-character short URLs
@@ -135,103 +96,18 @@ url-shortener/
 - Works on all screen sizes
 - Touch-friendly interface
 
-## 🔒 Security Features
+##  Security Features
 
 - **Input Validation**: Validates all URLs before processing
 - **Error Handling**: Comprehensive error handling and user feedback
 - **CORS**: Cross-origin resource sharing enabled
 - **Helmet**: Security headers for Express.js
 
-## 🚀 Deployment
 
-### Local Development
-```bash
-npm run dev
-```
-
-### Production
-```bash
-npm start
-```
-
-### Environment Variables
-- `PORT`: Server port (default: 3000)
-
-## 📝 API Documentation
-
-### Create Short URL
-```http
-POST /api/shorten
-Content-Type: application/json
-
-{
-  "originalUrl": "https://example.com/very/long/url"
-}
-```
-
-**Response:**
-```json
-{
-  "originalUrl": "https://example.com/very/long/url",
-  "shortUrl": "http://localhost:3000/abc123",
-  "message": "URL shortened successfully"
-}
-```
-
-### Get URL Statistics
-```http
-GET /api/stats/:shortUrl
-```
-
-**Response:**
-```json
-{
-  "shortUrl": "http://localhost:3000/abc123",
-  "originalUrl": "https://example.com/very/long/url",
-  "clicks": 5,
-  "createdAt": "2024-01-01T00:00:00.000Z"
-}
-```
-
-### Get All URLs
-```http
-GET /api/urls
-```
-
-**Response:**
-```json
-{
-  "totalUrls": 2,
-  "urls": [
-    {
-      "shortUrl": "http://localhost:3000/abc123",
-      "originalUrl": "https://example.com/very/long/url",
-      "clicks": 5,
-      "createdAt": "2024-01-01T00:00:00.000Z"
-    }
-  ]
-}
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
 
 - Inspired by Bitly's URL shortening service
-- Built with modern web technologies
-- Designed for learning and educational purposes
 
-## 📞 Support
+
 
 If you have any questions or need help, please open an issue on GitHub.
 
